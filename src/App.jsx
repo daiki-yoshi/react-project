@@ -6,7 +6,7 @@ export default function App() {
     const [yItem, setYItem] = useState("");
     const [zItem, setZItem] = useState("");
     const [userName, setUserName] = useState("");
-    const [unit, setUnit] = useState("us"); // ユーザーの選択した単位を保持
+    const [unit, setUnit] = useState("us"); 
 
     function randomValueFromArray(array){
         const random = Math.floor(Math.random()*array.length);
