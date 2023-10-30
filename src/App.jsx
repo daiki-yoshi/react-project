@@ -5,7 +5,7 @@ export default function App() {
     const [xItem, setXItem] = useState("");
     const [yItem, setYItem] = useState("");
     const [zItem, setZItem] = useState("");
-    const [userName, setUserName] = useState("");
+    const [name, setName] = useState("");
     const [unit, setUnit] = useState("us"); 
 
     function randomValueFromArray(array){
@@ -28,7 +28,7 @@ export default function App() {
     }
 
     const handleNameChange = (e) => {
-        setUserName(e.target.value);
+        setName(e.target.value);
     };
 
     const handleUnitChange = (e) => {
@@ -66,9 +66,9 @@ export default function App() {
             </div>
             {showStory && (
                 <p>
-                    It was {unit === 'us' ? "94 Fahrenheit" : "34 Celsius"} outside, so {userName || "Bob"} went for a walk. When they
+                    It was {unit === 'us' ? "94 Fahrenheit" : "34 Celsius"} outside, so {xItem} went for a walk. When they
                     got to {yItem}, they stared in horror for a few moments, then {zItem}.
-                    {userName || "Bob"} saw the whole thing, but was not surprised — {userName || "Bob"} weighs {unit === 'us' ? "300 pounds" : `21.43 stones`}, and it was a hot day.
+                    {name || "Bob"} saw the whole thing, but was not surprised — {xItem} weighs {unit === 'us' ? "300 pounds" : `21 stones`}, and it was a hot day.
                 </p>
             )}
         </>
