@@ -6,7 +6,9 @@ export default function App() {
     const [yItem, setYItem] = useState("");
     const [zItem, setZItem] = useState("");
     const [name, setName] = useState("");
+    const [printName, setPrintName] = useState("");
     const [unit, setUnit] = useState("us"); 
+    const [unitLabel, setUnitLabel] = useState("us"); 
 
     function randomValueFromArray(array){
         const random = Math.floor(Math.random()*array.length);
@@ -24,6 +26,9 @@ export default function App() {
         setXItem(selectXItem); 
         setYItem(selectYItem); 
         setZItem(selectZItem); 
+        setPrintName(name); 
+        setUnitLabel(unit); 
+
         setShowStory(true);
     }
 
@@ -42,6 +47,7 @@ export default function App() {
                 <input 
                     type="text" 
                     placeholder=""
+                    value={name}   
                     onChange={handleNameChange}
                 />
             </div>
@@ -66,9 +72,9 @@ export default function App() {
             </div>
             {showStory && (
                 <p>
-                    It was {unit === 'us' ? "94 Fahrenheit" : "34 Celsius"} outside, so {xItem} went for a walk. When they
+                    It was {unitLabel === 'us' ? "94 Fahrenheit" : "34 Celsius"} outside, so {xItem} went for a walk. When they
                     got to {yItem}, they stared in horror for a few moments, then {zItem}.
-                    {name || "Bob"} saw the whole thing, but was not surprised — {xItem} weighs {unit === 'us' ? "300 pounds" : `21 stones`}, and it was a hot day.
+                    {printName || "Bob"} saw the whole thing, but was not surprised — {xItem} weighs {unitLabel === 'us' ? "300 pounds" : `21 stones`}, and it was a hot day.
                 </p>
             )}
         </>
